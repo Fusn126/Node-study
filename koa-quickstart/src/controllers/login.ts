@@ -31,7 +31,7 @@ export default class AuthController {
       ctx.body = { token: jwt.sign({ id: user.id }, JWT_SECRET) , code:200 };
     } else {
       ctx.status = 200;
-      ctx.body = { message: '' , code: 401 };
+      ctx.body = { message: '密码错误，请重试' , code: 401 };
     }
   }
 
